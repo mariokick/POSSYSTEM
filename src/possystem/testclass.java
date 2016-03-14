@@ -22,10 +22,13 @@ br.readbBarcode(br.randomID("11","11","1121"));
   ip.addbarcode(br.partBarcode());
   br.readbBarcode(br.randomID("31","11","1121"));
   ip.addbarcode(br.partBarcode());
-EMV.readCCard("บัตรเดบิต","10-10-1994","1289481224");
-EMV.partCHK();
-EMV.partCode();
-EMV.partDateend();
+
+    EMV.readCCard("บัตรเดบิต","10-10-1994","1289481224116");
+    EMV.partCHK();
+    EMV.partCode();
+    EMV.partDateend();
+    
+  
   pt.Print();
     }
 }

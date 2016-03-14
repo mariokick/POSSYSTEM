@@ -12,7 +12,8 @@ package possystem;
 public class Printer {
     
     public void Print(){
-        System.out.println("Barcode"+Ipad.ListBarcode+"Pay by CardCard"+Ipad.getCCard());
+        System.out.println("\n "+CashDrawer.CashDrawerout()
+                + "\n Product Barcode : "+Ipad.ListBarcode+"\n Pay by "+Ipad.getType()+Ipad.getCCard() );
     }
     
 }

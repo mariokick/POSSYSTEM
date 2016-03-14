@@ -5,6 +5,8 @@
  */
 package possystem;
 
+import static possystem.Ipad.Type;
+
 /**
  *
  * @author Godonlyknows
@@ -41,12 +43,12 @@ public class EMV {
     
     public static void readCCard(String C ,String datec ,String codecard){
         if(C.equals("") || codecard.equals("") || datec.equals("")){
-               System.out.println("ERROR");
+               System.out.println("ERROR NOT FOUND CARD");
   
         }
         else{
          
-                  
+                       Type="Card";
         CHK=C;
         Dateend =datec;
         CODE=codecard;
