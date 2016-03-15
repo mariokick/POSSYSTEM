@@ -5,7 +5,7 @@
  */
 package possystem;
 
-import static possystem.Ipad.Type;
+
 
 /**
  *
@@ -13,9 +13,9 @@ import static possystem.Ipad.Type;
  */
 public class EMV {
    
-    private static String Dateend ;
-    private static String CODE;
-    private static String CHK ;
+    private static String Dateend="" ;
+    private static String CODE="";
+    private static String CHK="";
 
     public static void setCHK(String CHK) {
         EMV.CHK = CHK;
@@ -47,8 +47,8 @@ public class EMV {
   
         }
         else{
-         
-                       Type="Card";
+            System.out.println("FOUND CARD");
+                    //   Type="Card";
         CHK=C;
         Dateend =datec;
         CODE=codecard;

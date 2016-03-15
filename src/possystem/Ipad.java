@@ -12,37 +12,56 @@ import java.util.ArrayList;
  * @author Godonlyknows
  */
 public class Ipad {
-  static ArrayList<String> ListBarcode = new ArrayList<String>();
- // static           ArrayList<String> ListCashCard = new ArrayList<String>();
-    static Barcode  barcode ;
+    public static ArrayList<String> ListBarcode = new ArrayList<String>();
+    private static Barcode  barcode ;
     private static String CashCard  ="";
-      static String Type ="Cash";
+    private static String CHK ;
+    private static String DateEnd;
+    private static String CODE;
+    private static boolean CheckCashCard = false;
+             
     
     Barcode br = new Barcode();
     
     public void addbarcode(String ba){
     ListBarcode.add(ba);
     }
-    public static String getCCard(){
+    public static boolean CheckCCard(){
+        getCashCard();
+        if(partCashCard().equals("")){
+            CheckCashCard = false;
+        }
+        else{
+            CheckCashCard=true;
+        }
+   return CheckCashCard;
+    }
+    public static String partCashCard(){
+        return CashCard;
+    }
+    public static void getCashCard(){
        // if(EMV.partCHK().equals("") || EMV.partDateend().equals("")||EMV.partCode().equals("")){
         // System.out.println("CCardERROR");
       //  }
       //  else{
- 
-           return CashCard = "\n ประเภทบัตร : "+ EMV.partCHK()+"\n หมายเลขบัตร : "+ EMV.partCode()+"\n วันหมดอายุของบัตร : "+ EMV.partDateend();
-       // }
+      CashCard =  EMV.partCHK()+ EMV.partCode()+ EMV.partDateend();
+      CHK=EMV.partCHK();
+      CODE=EMV.getCODE();
+      DateEnd=EMV.getDateend();
+
+               
        // }
     }
-    public String addCCard(){
-  
-       return(getCCard());
+    public static String getCODE() {
+        return CODE;
     }
-    public String getBarcode (){
+    public static String getDateEnd() {
+        return DateEnd;
+    }
+    public static String getCHK (){
+        return CHK;
+    }
+    public String getBarcode() {
         return Barcode.partBarcode();
     }
-
-    public static String getType() {
-        return Type;
-    }
-    
 }

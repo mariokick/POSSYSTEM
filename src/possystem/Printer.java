@@ -12,8 +12,19 @@ package possystem;
 public class Printer {
     
     public void Print(){
+        if(Ipad.CheckCCard() == true){
+
         System.out.println("\n "+CashDrawer.CashDrawerout()
-                + "\n Product Barcode : "+Ipad.ListBarcode+"\n Pay by "+Ipad.getType()+Ipad.getCCard() );
+                + "\n Product Barcode : "+Ipad.ListBarcode+"\n Pay by CashCard  "
+                +"\n ประเภทบัตร :"+Ipad.getCHK()
+                +"\n รหัส CashCard :"+Ipad.getCODE()
+                +"\n วันหมดอายุบัตร :"+Ipad.getDateEnd());
+                    
+        }
+        else{
+              System.out.println("\n "+CashDrawer.CashDrawerout()
+                + "\n Product Barcode : "+Ipad.ListBarcode+"\n NOT CASHCARD");
+        }
     }
     
 }

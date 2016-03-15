@@ -10,15 +10,17 @@ package possystem;
  * @author Godonlyknows
  */
 public class CashDrawer {
-    
+   
     public static String CashDrawerout(){
-   if(Ipad.Type.equals("Card")){
-       return "CashClose";
+        String CashDrawerwork="";
+   if(Ipad.CheckCCard() == false){
+       CashDrawerwork ="CashCLOSE";
    }
    else{
-       return "CashOPEN";
+        CashDrawerwork ="CashOPEN";
        
    }
+   return CashDrawerwork;
 }
     
 }
